@@ -1,0 +1,11 @@
+tree("Root")                                     
+			while SeePlayer                             //se ver o player
+					sequence
+						TargetPlayer                    //Detecta o Player
+						LookAtTargetFuga                //olha para o Player para aplicar fuga
+						
+						
+
+
+
+		

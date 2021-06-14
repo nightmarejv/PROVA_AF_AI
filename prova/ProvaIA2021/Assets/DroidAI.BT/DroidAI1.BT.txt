@@ -1,0 +1,17 @@
+tree("Root")
+			fallback
+					tree("Attack")                     //chama o tree atack
+					while IsHealthLessThan(40.0)       //se a vida for menor que 40
+						fallback                       //retorna
+							tree("Wander")             //chama o wander
+tree("Attack")                                     
+			while SeePlayer                             //se ver o player
+					sequence
+						TargetPlayer                    //Detecta o Player
+						LookAtTarget                    //olha para o Player
+						Fire                            //atira no Player
+
+tree("Wander")
+			sequence
+    				PickRandomDestination               //pega um destino aleatorio
+    				MoveToDestination                   //move para o destino

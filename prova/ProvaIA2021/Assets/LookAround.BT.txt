@@ -1,0 +1,11 @@
+tree("Root")
+        	sequence
+                random(5,1,1,1)                           //randomiza a quantidade de vezes no paramtro pra ordem abaixo
+                                Turn(90.0)                //rotacao em graus
+                                Turn(-90.0)               //rotacao em graus
+                                Turn(145.0)               //rotacao em graus
+                                Turn(-27.0)               //rotacao em graus
+                LookAtTarget                              //Detecta o Target
+                WaitRandom(2.0,5.0)                       //metodo com problema discutido em aula
+               
+                      

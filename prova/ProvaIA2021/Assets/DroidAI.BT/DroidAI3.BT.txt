@@ -1,0 +1,17 @@
+tree("Root")
+			fallback
+					tree("Empurrar")                   //chama o tree Empurrar
+					while IsHealthLessThan(40.0)       //se a vida for menor que 40
+						fallback                       //retorna
+							tree("Wander")             //chama o wander
+tree("Empurrar")                                     
+			while SeePlayer                             //se ver o player
+					sequence
+						TargetPlayer                    //Detecta o Player
+						LookAtTarget                    //olha para o Player
+						EmpurrarPraFora                 //Chama o metodo que empurra o player pra fora
+
+tree("Wander")
+			sequence
+    				PickRandomDestination               //pega um destino aleatorio
+    				MoveToDestination                   //move para o destino

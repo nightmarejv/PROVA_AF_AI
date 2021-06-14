@@ -1,0 +1,30 @@
+tree("Root")
+			parallel
+					repeat mute tree("Patrol")        //verifica se esta no patrol
+					repeat mute tree("Dead")          //verifica se esta morto
+	
+tree("Patrol")
+			fallback
+					tree("Attack")                     //chama o tree atack
+					while IsHealthLessThan(40.0)       //se a vida for menor que 40
+						fallback                       //retorna
+							tree("Wander")             //chama o wander
+
+tree("Attack")                                     
+			while SeePlayer                             //se ver o player
+					sequence
+						TargetPlayer                    //Detecta o Player
+						LookAtTarget                    //olha para o Player
+						Fire                            //atira no Player
+
+tree("Dead")                                            //pega a função "morto"
+			sequence                          
+					IsHealthLessThan(0.1)               //chama o metodo IsHealthLessThan e fala que se a vida for menor que 0.1 prossegue
+					Explode                             //chama o metodo Explode que destroi o player
+
+tree("Wander")
+			sequence
+    				PickRandomDestination               //pega um destino aleatorio
+    				MoveToDestination                   //move para o destino
+
+
